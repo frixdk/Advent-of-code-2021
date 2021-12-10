@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 import click
 from aocd import data
 from aocd import submit as aocd_submit

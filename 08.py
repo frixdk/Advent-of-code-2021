@@ -1,5 +1,4 @@
 from collections import defaultdict
-from aocd.transforms import lines
 
 import click
 from aocd import lines
@@ -16,16 +15,6 @@ def advent():
 
 def parse_input(input):
     return [(i.split(" | ")[0].split(), i.split(" | ")[1].split()) for i in input]
-    #return patterns.split(), output.split()
-
-
-def solver(input, fuel):
-    crabs = parse_input(input)
-    spent = []
-    for i in range(min(crabs), max(crabs) + 1):
-        spent.append(sum([fuel(i, x) for x in crabs]))
-
-    return int(min(spent))
 
 
 def a_solver(input):
@@ -41,7 +30,7 @@ def b_solver(input):
     patterns = parse_input(input)
     count = 0
     for p in patterns:
-        
+
         digits = {
                 1: [f for f in p[0] if len(f) == 2][0],
                 7: [f for f in p[0] if len(f) == 3][0],
@@ -76,7 +65,7 @@ def b_solver(input):
                     output_digits.append(str(d))
 
         count += int("".join(output_digits))
-        
+
     return count
 
 
