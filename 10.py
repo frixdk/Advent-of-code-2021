@@ -39,7 +39,7 @@ def solver(input):
     for chunk in chunks:
         active = []
         for c in chunk:
-            if c in CLOSES.keys():
+            if c in CLOSES:
                 active.append(c)
             elif CLOSES[active[-1]] == c:
                 active.pop(-1)
